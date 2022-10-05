@@ -57,8 +57,8 @@ def tot_rain(data,date):
 
 def report_daily(data,date):
     display = "========================= DAILY REPORT ========================\n"
-    display = display + "Date                      Time  Temperature  Humidity  Rainfall\n"
-    display = display + display + "====================  ========  ===========  ========  ========\n"
+    display +="Date                      Time  Temperature  Humidity  Rainfall\n"
+    display +="====================  ========  ===========  ========  ========\n"
     for key in data:
         if date == key[0:8]:
             m = calendar.month_name[int(date[4:6])] + " " + str(int(date[6:8])) + "," + str(int(date[0:4]))
@@ -70,7 +70,7 @@ def report_daily(data,date):
     return display
 
 def report_historical(data):
-    display = "============================== HISTORICAL REPORT ===========================\n"
-    display += "Minimum      Maximum   Minumum   Maximum     Total\n"
+    display =  "============================== HISTORICAL REPORT ===========================\n"
+    display += "                      Minimum      Maximum   Minumum   Maximum     Total\n"
     display += "Date                  Temperature  Temperature  Humidity  Humidity  Rainfall\n"
     display += "====================  ===========  ===========  ========  ========  ========\n"
