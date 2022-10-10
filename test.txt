@@ -1,39 +1,29 @@
-..E....FE
+........F
 ======================================================================
-ERROR: test_list_int (__main__.Test03_max_temperature)
-*** Test03 **** FUNCTION CALL: weather.max_temperature(data={"20210203075501": {"t": 55, "h": 87, "r": 0}, "20210203090602": {"t": 63, "h": 84, "r": 0}, "20210203102903": {"t": 71, "h": 79, "r": 0}, "20210203125504": {"t": 72, "h": 69, "r": 0}, "20210203183905": {"t": 59, "h": 75, "r": 0}, "20210205044406": {"t": 57, "h": 68, "r": 0.01}, "20210205083307": {"t": 65, "h": 63, "r": 0.05}, "20210205122208": {"t": 73, "h": 56, "r": 0.11}, "20210205161109": {"t": 74, "h": 60, "r": 0.19}}, date='20210205') *** EXPECT: 74 ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "c:\Users\xtran\Dropbox (CSU Fullerton)\CPSC\CPSC 223P\assignment_4-trangn03\test.py", line 43, in test_list_int
-    r = weather.max_temperature(data={"20210203075501": {"t": 55, "h": 87, "r": 0}, "20210203090602": {"t": 63, "h": 84, "r": 0}, "20210203102903": {"t": 71, "h": 79, "r": 0}, "20210203125504": {"t": 72, "h": 69, "r": 0}, "20210203183905": {"t": 59, "h": 75, "r": 0}, "20210205044406": {"t": 57, "h": 68, "r": 0.01}, "20210205083307": {"t": 65, "h": 63, "r": 0.05}, "20210205122208": {"t": 73, "h": 56, "r": 0.11}, "20210205161109": {"t": 74, "h": 60, "r": 0.19}}, date='20210205')
-  File "c:\Users\xtran\Dropbox (CSU Fullerton)\CPSC\CPSC 223P\assignment_4-trangn03\weather.py", line 23, in max_temperature
-    if date[key]['t'] > x:
-TypeError: string indices must be integers
-
-======================================================================
-ERROR: test_list_int (__main__.Test09_report_historical)
+FAIL: test_list_int (__main__.Test09_report_historical)
 *** Test09 **** FUNCTION CALL: weather.report_historical(data={"20210203075501": {"t": 55, "h": 87, "r": 0}, "20210203090602": {"t": 63, "h": 84, "r": 0}, "20210203102903": {"t": 71, "h": 79, "r": 0}, "20210203125504": {"t": 72, "h": 69, "r": 0}, "20210203183905": {"t": 59, "h": 75, "r": 0}, "20210205044406": {"t": 57, "h": 68, "r": 0.01}, "20210205083307": {"t": 65, "h": 63, "r": 0.05}, "20210205122208": {"t": 73, "h": 56, "r": 0.11}, "20210205161109": {"t": 74, "h": 60, "r": 0.19}}) *** EXPECT: <look in test.py Test09 variable = report> ***
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "c:\Users\xtran\Dropbox (CSU Fullerton)\CPSC\CPSC 223P\assignment_4-trangn03\test.py", line 110, in test_list_int
-    r = weather.report_historical(data={"20210203075501": {"t": 55, "h": 87, "r": 0}, "20210203090602": {"t": 63, "h": 84, "r": 0}, "20210203102903": {"t": 71, "h": 79, "r": 0}, "20210203125504": {"t": 72, "h": 69, "r": 0}, "20210203183905": {"t": 59, "h": 75, "r": 0}, "20210205044406": {"t": 57, "h": 68, "r": 0.01}, "20210205083307": {"t": 65, "h": 63, "r": 0.05}, "20210205122208": {"t": 73, "h": 56, "r": 0.11}, "20210205161109": {"t": 74, "h": 60, "r": 0.19}})
-  File "c:\Users\xtran\Dropbox (CSU Fullerton)\CPSC\CPSC 223P\assignment_4-trangn03\weather.py", line 91, in report_historical
-    max_temp = max_temperature(data,h)
-  File "c:\Users\xtran\Dropbox (CSU Fullerton)\CPSC\CPSC 223P\assignment_4-trangn03\weather.py", line 23, in max_temperature
-    if date[key]['t'] > x:
-TypeError: string indices must be integers
-
-======================================================================
-FAIL: test_list_int (__main__.Test08_report_daily)
-*** Test08 **** FUNCTION CALL: weather.report_daily(data={"20210203075501": {"t": 55, "h": 87, "r": 0}, "20210203090602": {"t": 63, "h": 84, "r": 0}, "20210203102903": {"t": 71, "h": 79, "r": 0}, "20210203125504": {"t": 72, "h": 69, "r": 0}, "20210203183905": {"t": 59, "h": 75, "r": 0}, "20210205044406": {"t": 57, "h": 68, "r": 0.01}, "20210205083307": {"t": 65, "h": 63, "r": 0.05}, "20210205122208": {"t": 73, "h": 56, "r": 0.11}, "20210205161109": {"t": 74, "h": 60, "r": 0.19}}, date='20210205') *** EXPECT: <look in test.py Test08 variable = report> ***
-----------------------------------------------------------------------
-Traceback (most recent call last):
-  File "c:\Users\xtran\Dropbox (CSU Fullerton)\CPSC\CPSC 223P\assignment_4-trangn03\test.py", line 101, in test_list_int
+  File "c:\Users\xtran\Dropbox (CSU Fullerton)\CPSC\CPSC 223P\assignment_4-trangn03\test.py", line 118, in test_list_int
     self.assertEqual(report, r)
-AssertionError: '====[197 chars]ry 5, 2021      04:44:06           57        6[204 chars]19\n' != '====[197 chars]ry 5,2021       04:44:06           57        6[204 chars]19\n'
-Diff is 863 characters long. Set self.maxDiff to None to see it.
+AssertionError: '====[91 chars]         Minimum      Maximum   Minumum   Maxi[323 chars]36\n' != '====[91 chars]     Minimum      Maximum   Minumum   Maximum [319 chars]36\n'
+  ============================== HISTORICAL REPORT ===========================
+-                           Minimum      Maximum   Minumum   Maximum     Total
+? ----
++                       Minimum      Maximum   Minumum   Maximum     Total
+  Date                  Temperature  Temperature  Humidity  Humidity  Rainfall
+  ====================  ===========  ===========  ========  ========  ========
+- February 3, 2021               55           72        69        87      0.00
+?            -
++ February 3,2021                55           72        69        87      0.00
+?                               +
+- February 5, 2021               57           74        56        68      0.36
+?            -
++ February 5,2021                57           74        56        68      0.36
+?                               +
+
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.028s
+Ran 9 tests in 0.033s
 
-FAILED (failures=1, errors=2)
+FAILED (failures=1)

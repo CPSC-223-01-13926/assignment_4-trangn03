@@ -17,10 +17,10 @@ def write_data(data,filename):
         json.dump(data,file)
     
 def max_temperature(data,date):
-    x = 0
+    x = -999
     for key in data:
         if date == key[0:8]: # first eight number
-            if date[key]['t'] > x: 
+            if data[key]['t'] > x: 
                 x = data[key]['t']
     return x
 
@@ -55,21 +55,24 @@ def tot_rain(data,date):
             rain += data[key]['r']
     return rain
 
-def report_daily(data,date):
+def report_daily(data, date):
     display = "========================= DAILY REPORT ========================\n"
-    display +="Date                      Time  Temperature  Humidity  Rainfall\n"
-    display +="====================  ========  ===========  ========  ========\n"
+    display += 'Date                      Time  Temperature  Humidity  Rainfall\n'
+    display += '====================  ========  ===========  ========  ========\n'
+
     for key in data:
-        if date == key[0:8]:
-            month = calendar.month_name[int(date[4:6])]
-            day = " " + str(int(date[6:8]))
-            year = "," + str(int(date[0:4]))
-            mdy = month + day + year
-            tm = key[8:10] + ":" + key[10:12] + ":" + key[12:14]
+        if key[0:8] == date:
+            m = calendar.month_name[int(date[4:6])]
+            d = ' ' + str(int(date[6:8])) + ', '
+            y = str(int(date[0:4]))
+            mdy = m+d+y
+
+            tm = key[8:10] + ':' + key[10:12] + ':' + key[12:14]
             t = data[key]['t']
             h = data[key]['h']
             r = data[key]['r']
             display = display + f'{mdy: <22}' + f'{tm: <10}' + f'{t: >11}' + f'{h: >10}' + f'{r: >10}\n'
+    
     return display
 
 def report_historical(data):
