@@ -27,18 +27,14 @@ while True:
         rainfall = float(input("Enter rainfall: "))
         w_data[date + time] = {"t": temperature, "h": humidity, "r": rainfall}
         weather.write_data(data = w_data, filename="w.dat")
-        
     elif (menu_choice == 3):
         date = input("Enter date (YYYYMMDD): ")
         print("\n")
         print(weather.report_daily(data=w_data, date=date))
-        
     elif (menu_choice == 4):
         print("\n")
         print(weather.report_daily(data=w_data, date=date))
-
     elif (menu_choice == 9):
         break
-
     else:
         print("Invalid Choice.")
